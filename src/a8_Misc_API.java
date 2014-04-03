@@ -60,7 +60,6 @@ public class a8_Misc_API {
         String joinExample = String.join(",", "a", "b", "c", "4", "E", "6");
         System.out.println(joinExample);
 
-        System.out.println(String.join(" ", Arrays.asList("1", "2", "3", "4", "5")));
         StringJoiner joiner = new StringJoiner("-");
         joiner.add("abbie");
         joiner.add("doobie");
