@@ -24,7 +24,6 @@ public class a6_Time {
         System.out.println(Christmas.getDayOfWeek());
         System.out.println(Christmas.getMonth());
 
-        // TODO: What the hell is a ChronoUnit?
         System.out.println(ChronoUnit.DAYS.between(now, TwoFortyChristmas));
         System.out.println(Christmas.with(TemporalAdjusters.firstDayOfNextMonth()));
 
