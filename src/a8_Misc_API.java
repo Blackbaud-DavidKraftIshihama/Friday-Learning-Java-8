@@ -43,7 +43,6 @@ public class a8_Misc_API {
                         Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER)
                 )
         );
-        // TODO: I'm still confused by my own shit here
 
         try {
             Stream stream = Files.list(Paths.get("c:\\temp\\"));
