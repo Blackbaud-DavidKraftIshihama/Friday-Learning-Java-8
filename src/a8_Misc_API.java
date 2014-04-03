@@ -31,7 +31,8 @@ public class a8_Misc_API {
         System.out.println(newThreadLocalString.get());
 
         // Java Optional
-        Optional<Integer> optional;
+        Optional<Integer> optional = Arrays.stream(new Integer[0]).min(Integer::compareTo);
+        System.out.println(optional);
 
         // Methods in Comparator
         List<Person> people = new ArrayList<>();
