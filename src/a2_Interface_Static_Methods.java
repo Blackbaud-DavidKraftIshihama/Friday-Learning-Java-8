@@ -3,25 +3,24 @@
  */
 public class a2_Interface_Static_Methods {
     public interface StaticTest {
-        // You must define behavior in the static method.
-        static void example() {
+        static void staticExample() {
             System.out.println("Static methods must be defined");
         }
 
         static StaticTest createInstance() {
             System.out.println("Used the static interface to create this class!");
-            return new NewClass();
+            return new StaticTestImpl();
         }
     }
 
-    public static class NewClass implements StaticTest {
+    public static class StaticTestImpl implements StaticTest {
         public String toString() {
-            return "instance of NewClass";
+            return "instance of StaticTestImpl";
         }
     }
 
     public static void main(String[] args) {
-        StaticTest.example();
+        StaticTest.staticExample();
         StaticTest obj = StaticTest.createInstance();
         System.out.println(obj.toString());
     }

@@ -1,7 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.*;
 
 /**
  * Created by David.Kraft-Ishihama on 3/27/2014.
@@ -14,14 +11,14 @@ public class a5_Streams {
         };
         // Well that's easy to remember.
 
+        int sum = Arrays.stream(numbers).sum();
+        System.out.println(sum);
+
         Arrays.stream(numbers)
                 .filter( (number) -> ( number > 1) )
                 .map( (number) -> (2 * number) )
                 .skip(8)
                 .limit(5)
                 .forEach((x) -> {System.out.println(x);});
-
-        int sum = Arrays.stream(numbers).sum();
-        System.out.println(sum);
     }
 }
