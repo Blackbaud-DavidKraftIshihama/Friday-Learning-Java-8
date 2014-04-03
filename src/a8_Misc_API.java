@@ -42,7 +42,7 @@ public class a8_Misc_API {
         System.out.println(newThreadLocalString.get());
 
         // Java Optional
-        Optional<Integer> optional = Arrays.stream(new Integer[0]).min(Integer::compareTo);
+        Optional<Integer> optional = new ArrayList<Integer>().stream().min(Integer::compareTo);
         System.out.println(optional);
 
         // Files can now return streams
