@@ -17,6 +17,17 @@ public class a8_Misc_API {
     }
 
     public static void main(String[] args) {
+        // Methods in Comparator
+        List<Person> people = new ArrayList<>();
+        people.sort(
+                Comparator.comparing(Person::getLastName)
+                        .thenComparing(Person::getFirstName)
+                        .thenComparing(
+                                Person::getEmailAddress,
+                                Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER)
+                        )
+        );
+
         // Old way of initializing ThreadLocal:
         ThreadLocal<List<String>> oldThreadLocalString = new ThreadLocal<List<String>>() {
             @Override
@@ -34,17 +45,7 @@ public class a8_Misc_API {
         Optional<Integer> optional = Arrays.stream(new Integer[0]).min(Integer::compareTo);
         System.out.println(optional);
 
-        // Methods in Comparator
-        List<Person> people = new ArrayList<>();
-        people.sort(
-                Comparator.comparing(Person::getLastName)
-                .thenComparing(Person::getFirstName)
-                .thenComparing(
-                        Person::getEmailAddress,
-                        Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER)
-                )
-        );
-
+        // Files can now return streams
         try {
             Stream stream = Files.list(Paths.get("c:\\temp\\"));
             stream = Files.lines(Paths.get("c:\\temp\\"), Charset.forName("UTF_32"));
@@ -58,6 +59,7 @@ public class a8_Misc_API {
             System.out.println(ex.getMessage());
         }
 
+        // Rejoice, for we finally have string joins!
         String joinExample = String.join(",", "a", "b", "c", "4", "E", "6");
         System.out.println(joinExample);
 
